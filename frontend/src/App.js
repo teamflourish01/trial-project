@@ -3,8 +3,10 @@ import Navbar from './Componts/Navbar'
 
 const App = () => {
   return (
+
     <div>
       <Navbar />
+    
     </div>
   )
 }
