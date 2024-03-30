@@ -1,11 +1,14 @@
 import React from 'react'
-import Navbar from './Components/Navbar'
+import Navbar from '../src/Components/Navbar'
+import Slidess from './Components/Slidess'
+// import Slidess from './Components/Slidess'
 
 const App = () => {
   return (
 
     <div>
       <Navbar />
+      <Slidess />
 
     </div>
   )
