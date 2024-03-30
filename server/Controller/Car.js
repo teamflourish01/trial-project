@@ -4,8 +4,8 @@ import Cardetail from "../Model/Car.js";
 export const carAdd = async (req, res) => {
   try {
     const cardetail = await Cardetail(req.body);
-    await cardetail.save();
-    res.status(200).json({ msg: "Car Details is Add" });
+    const doc=await cardetail.save();
+    res.status(200).json({msg: "Car Details is Add",doc });
   } catch (error) {
     res.status(500).json(error);
   }
@@ -15,7 +15,7 @@ export const carAdd = async (req, res) => {
 export const fetchCarData = async (req, res) => {
   try {
     const cardetail = await Cardetail.find({});
-    res.status(200).json(cardetail);
+    res.status(200).json({msg:"Car Data Fetch",cardetail});
   } catch (error) {
     res.status(500).json(error);
   }
