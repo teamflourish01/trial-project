@@ -4,7 +4,7 @@ import '../Style/Navbar.css'
 const Navbar = () => {
   return (
     <div>
-      <h1>harpal</h1>
+      <h1>dcdscds</h1>
     </div>
   )
 }
