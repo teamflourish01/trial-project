@@ -9,16 +9,17 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/caradd" element={<CardetailForm />} />
-        </Routes>
-      </BrowserRouter>
+
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Slidess />} />
+        <Route path="/caradd" element={<CardetailForm />} />
+      </Routes>
+
     </>
   );
 };
 
 
-  
+
 export default App;
