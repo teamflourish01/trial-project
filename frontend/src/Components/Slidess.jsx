@@ -2,9 +2,9 @@ import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import im from '../Images/aston-martin-2118857_1280.jpg';
-import im2 from '../Images/auto-1868726_1280.jpg';
-import im3 from '../Images/car-498244_1280.jpg';
+import im from '../images/aston-martin-2118857_1280.jpg';
+import im2 from '../images/auto-1868726_1280.jpg';
+import im3 from '../images/car-498244_1280.jpg';
 import '../Style/slides.css';
 
 const Slidess = () => {
