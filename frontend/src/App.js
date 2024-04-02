@@ -9,6 +9,7 @@ import AboutUs from "./Components/About-Us";
 const App = () => {
   return (
     <>
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Slidess />} />
@@ -19,5 +20,11 @@ const App = () => {
     </>
   );
 };
+
+
+
+     
+
+
 
 export default App;
