@@ -33,7 +33,7 @@ const Navbar = () => {
           <div className="nav-menus">
             <ul id='navbars' className={clicked ? "active" : ""}>
               <li><Link to="/" onClick={handleCloseMenu}>Home</Link></li>
-              <li><Link to="/About" onClick={handleCloseMenu}>About</Link></li>
+              <li><Link to="/About" onClick={handleCloseMenu}>ADD CAR</Link></li>
             </ul>
           </div>
           <div className='mobil'>
