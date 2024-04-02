@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 const CardetailForm = () => {
   const [car, setCar] = useState({
     brand: "",
@@ -7,36 +7,78 @@ const CardetailForm = () => {
     fuel: "",
     modelyear: "",
     price: "",
+    image: "",
   });
+  const [images, setimages] = useState({});
+  const[updateimg,setupdateimg]=useState("");
+  const formdata = new FormData();
+  console.log("image", images.name);
+  const handlimage = (e) => {
+    setimages(e.target.files[0]);
+    setCar({ ...car, image: e.target.files[0].name });
+  };
 
   const handlInput = (e) => {
     let { name, value } = e.target;
-
     setCar({ ...car, [name]: value });
   };
-  const handleSubmit = async (e) => {
+
+  const handleimageSubmit = async (e) => {
     e.preventDefault();
+    console.log("image", images);
     try {
-      const response = await fetch("http://localhost:2222/car/add", {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(car),
+      formdata.append("image", images);
+      let res = await axios.post("http://localhost:8000/car/image", formdata, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
-      if (response.ok) {
+      console.log(images);
+      if (res.data) {
+        console.log(res.data, "resdata");
+        setupdateimg(res.data.filename)
+        return res.data.filename
         alert("Car Data is Successfuly Add");
-        setCar({ brand: "", carname: "", fuel: "", modelyear: "", price: "" });
+      
+        
       }
     } catch (error) {
       console.log(error);
     }
   };
+
+  const handleSubmit = async (e,url) => {
+    e.preventDefault();
+    debugger
+    try {
+      const response = await fetch("http://localhost:8000/car/add", {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({...car,image:url}),
+      });
+      if (response.ok) {
+        alert("Car Data is Successfuly Add");
+        setCar({
+          brand: "",
+          carname: "",
+          fuel: "",
+          modelyear: "",
+          price: "",
+          image: "",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="container-fluid py-5 h-75">
         <div className="row justify-content-center align-items-center h-100">
           <div className="col-lg-6">
             <div className="wow fadeInUp" data-wow-delay="0.2s">
-              <form onSubmit={handleSubmit}>
+              <form >
                 <div className="row g-3">
                   <div className="col-md-12">
                     <div className="form-floating">
@@ -120,6 +162,7 @@ const CardetailForm = () => {
                         type="file"
                         className="form-control"
                         id="images"
+                        onChange={handlimage}
                         name="images"
                       />
                       <label for="images">images</label>
@@ -130,6 +173,11 @@ const CardetailForm = () => {
                     <button
                       className="btn btn-success w-100  py-3"
                       type="submit"
+                      onClick={(e) => {
+                        handleimageSubmit(e)
+                          .then((x) => handleSubmit(e,x))
+                          .catch((err) => console.log(err));
+                      }}
                     >
                       Add Car Data
                     </button>
