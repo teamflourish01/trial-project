@@ -13,17 +13,19 @@ import AboutUs from "./Components/About-Us";
 const App = () => {
   return (
     <>
-      <BrowserRouter>
+
+     
         <Navbar />
         <Routes>
           <Route path="/caradd" element={<CardetailForm />} />
           <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
-      </BrowserRouter>
+    
+
     </>
   );
 };
 
 
-  
+
 export default App;
