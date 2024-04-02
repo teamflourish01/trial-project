@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* About us page css */
+
+.about-us-section {
+  padding: 50px 0;
+}
+.about-us-section img {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-right: 50px;
+}
+.about-us-content {
+  width: 100%;
+  float: left;
+}
+.about_section .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about_section .img-box img {
+  width: 100%;
+}
+
+.about_section .detail-box {
+  text-align: center;
+}
+
+.about_section .detail-box h2 {
+  font-weight: bold;
+}
+
+.about_section .detail-box p {
+  margin-top: 15px;
+}
+
+.about_section .detail-box a {
+  display: inline-block;
+  padding: 8px 25px;
+  background-color: #f22324;
+  color: #fefdfc;
+  border-radius: #000000;
+  border: 1px solid #f22324;
+  margin-top: 15px;
+}
+
+.about_section .detail-box a:hover {
+  background-color: transparent;
+  color: #f22324;
+}
