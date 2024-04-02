@@ -1,0 +1,442 @@
+/* * {
+  margin: 0;
+  padding: 0;
+}
+
+.main-navbar {
+  width: 100%;
+  height: 8rem;
+  display: grid;
+  grid-template-columns: 10rem 1fr 2fr 20rem;
+  cursor: pointer;
+
+}
+
+.nav-logo {
+  grid-column: 2/3;
+  display: grid;
+  align-items: center;
+  justify-content: start;
+}
+
+.logo {
+  width: 129.82px;
+  height: 100px;
+}
+
+.menu-links {
+  grid-column: 3/4;
+}
+
+.nav-list {
+  height: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  position: sticky;
+}
+
+.nav-li {
+  list-style: none;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 600px) {
+  .menu-links {
+    display: none;
+  }
+
+  .main-navbar {
+    justify-content: space-around;
+    grid-template-columns: 1rem 1fr 2fr 2rem;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+
+
+  .nav-list {
+    display: grid;
+    align-items: start;
+    justify-content: left;
+  }
+
+  ;
+}
+
+@media screen and (max-width: 600px) and (min-width: 289px) {
+  .menu-links {
+    display: none;
+  }
+
+  .main-navbar {
+    justify-content: space-around;
+    grid-template-columns: 1rem 1fr 2fr 2rem;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+
+  .logo {
+    width: 100%;
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 289px) {
+
+  .mobile-menu {
+    grid-column: 2/4;
+    position: relative;
+    z-index: 99;
+
+  }
+
+  .mobile-menu {
+    width: 50vw;
+    height: 100vh;
+    font-weight: 900;
+    color: black;
+    font-size: 1.5rem;
+    background-color: white;
+    display: grid;
+    grid-column: 3/5;
+    align-items: center;
+    justify-content: center;
+    padding-left: 3rem;
+
+    transform-origin: top;
+    box-shadow: 0 0.199em 1.770em #DBDBDB;
+
+  }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.todavs {
+
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 1020;
+  background: black;
+  position: sticky;
+  height: 15vh;
+
+  /* padding: 0 10px; */
+}
+
+.siddhi-logo {
+  width: 100%;
+  height: 50px;
+
+}
+
+#navbars {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+#navbars li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+#navbars li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s ease-in-out;
+
+}
+
+#navbars li :hover {
+  color: #17cf97;
+}
+
+.dse-1 {
+  font-size: 1.5rem;
+  animation: erase 4s ease-in infinite;
+  text-align: center;
+  font-weight: 600;
+
+}
+
+.mobil {
+  display: none;
+
+}
+
+.siddhi-logo {
+  width: 200px;
+  height: 70px;
+}
+
+@keyframes erase {
+  0% {
+    color: #B7B7B7;
+  }
+
+  50% {
+    color: #7A9D54;
+  }
+
+  100% {
+    color: #B7B7B7;
+  }
+}
+
+
+@media screen and (max-width:1024px) and (min-width:900px) {
+
+  /* .todavs {
+
+
+    width: 100%;
+    z-index: 1020;
+    background: black;
+
+    height: 15vh;
+  } */
+
+  #navbars {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 96px;
+    right: -900px;
+    width: 50vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    z-index: 99;
+    align-items: center;
+    padding: 10px;
+    transition: 0.7s ease-in-out;
+  }
+
+  #navbars.active {
+    right: 0px;
+    transition: 0.7s ease-in-out;
+    padding: 20px 0;
+  }
+
+  #navbars.active:hover {
+    color: yellow;
+  }
+
+  #navbars li {
+    margin-bottom: 15px;
+  }
+
+  .mobil {
+    display: block;
+
+  }
+
+  .mobil i {
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+  }
+
+}
+
+@media screen and (max-width:899px) and (min-width:600px) {
+  #navbars {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 66px;
+    right: -900px;
+    width: 50vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    z-index: 99;
+    align-items: center;
+    padding: 10px;
+    transition: 0.7s ease-in-out;
+  }
+
+  #navbars.active {
+    right: 0px;
+    transition: 0.7s ease-in-out;
+    padding: 20px 0;
+  }
+
+  #navbars.active:hover {
+    color: yellow;
+  }
+
+  #navbars li {
+    margin-bottom: 15px;
+  }
+
+  .mobil {
+    display: block;
+  }
+
+  .mobil i {
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+  }
+
+}
+
+@media screen and (max-width:600px) and (min-width:400px) {
+  #navbars {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 66px;
+    right: -900px;
+    width: 50vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    z-index: 99;
+    align-items: center;
+    padding: 10px;
+    transition: 0.7s ease-in-out;
+
+  }
+
+  #navbars.active {
+    right: 0px;
+    transition: 0.7s ease-in-out;
+    padding: 20px 0;
+  }
+
+  #navbars.active:hover {
+    color: yellow;
+  }
+
+  #navbars li {
+    margin-bottom: 15px;
+  }
+
+  .mobil {
+    display: block;
+  }
+
+  .mobil i {
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+  }
+
+}
+
+@media screen and (max-width:399px) and (min-width:280px) {
+  #navbars {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 66px;
+    right: -900px;
+    width: 50vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    z-index: 99;
+    align-items: center;
+    padding: 10px;
+    transition: 0.7s ease-in-out;
+  }
+
+  #navbars.active {
+    right: 0px;
+    transition: 0.7s ease-in-out;
+    padding: 20px 0;
+  }
+
+  #navbars.active:hover {
+    color: yellow;
+  }
+
+  #navbars li {
+    margin-bottom: 15px;
+  }
+
+  .mobil {
+    display: block;
+  }
+
+  .mobil i {
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+
+  }
+
+}
+
+@media screen and (max-width:1024px) and (min-width:700px) {
+  .todavs {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1;
+    background: black;
+    /* height: 15vh; */
+  }
+
+  .siddhi-logo {
+    width: 160px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width:700px) and (min-width:289px) {
+
+  .todavs {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: black;
+    height: 15vh;
+    top: 0;
+  }
+
+  /* #navbars.active {
+    right: 0px;
+    margin: 19px 0 0 0;
+
+    padding: 2px 0;
+  } */
+  .siddhi-logo {
+    width: 160px;
+    height: 50px;
+  }
+}
